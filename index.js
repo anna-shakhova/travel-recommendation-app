@@ -9,8 +9,15 @@ async function getData(search) {
             return data.temples;            
         case (/countr(y|ies)/.test(search.toLowerCase())):
             return data.countries.flatMap(({ cities}) => cities);
-        default:
-            return data;
+        default: {
+            const allDestinations = [
+                ...data.beaches,
+                ...data.temples,
+                ...data.countries.flatMap(({ cities}) => cities)
+            ];
+
+            return allDestinations.filter(({ name }) => new RegExp(search.toLowerCase()).test(name.toLowerCase()));
+        }            
     }
 }
 
@@ -19,7 +26,7 @@ async function search() {
     const data = await getData(searchInput.value);
 
     const results = document.getElementById('destination-results');
-    results.style.visibility = "visible";
+    results.innerHTML = '';
 
     for (let destination of data) {
         const destinationCard = document.createElement('div');
@@ -28,19 +35,14 @@ async function search() {
         destinationCard.innerHTML = `
             <img class="destination-img" src="${destination.imageUrl}"></img>
             <div class="destination-descr">
-                <p>${destination.name}</p>
+                <p><strong>${destination.name}</strong></p>
                 <p>${destination.description}</p>
-                <button>Visit</button>
+                <button class="button">Visit</button>
             </div>
         `;
 
         results.appendChild(destinationCard);
     }
-
-    console.log(data);
-
-    // replace with real code
-    console.log(searchInput.value);
 }
 
 function clearSearch() {
@@ -48,4 +50,17 @@ function clearSearch() {
 
     searchInput.value = '';
     searchInput.focus();
+
+    const results = document.getElementById('destination-results');
+    results.innerHTML = '';
 }
+
+const searchInput = document.getElementById('search');
+
+// Execute a function when the user presses a key on the keyboard
+searchInput.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    search();
+  }
+});
