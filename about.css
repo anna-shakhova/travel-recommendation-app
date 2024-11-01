@@ -1,0 +1,37 @@
+.team {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 400px);
+    grid-auto-flow: row;
+    grid-gap: 16px;
+}
+
+.team-member-card {
+    background: rgba(255, 255, 255, 0.6);
+    display: flex;
+    border-radius: 16px;
+    width: 400px;
+    height: 300px;
+}
+
+.team-member-img {
+    border-radius: 16px 0 0 16px;
+    width: 200px;
+}
+
+.team-member-descr {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+}
+
+.team-member-descr p {
+    margin: 0;
+}
+
+.team-member-name {
+    font-weight: 600;
+}
+
+.team-member-role {
+    margin-bottom: 16px !important;
+}
