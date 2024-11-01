@@ -6,3 +6,26 @@
 .page-text-home {
     margin-right: 50%;
 }
+
+#destination-results {
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.destination-card{
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+    margin-bottom: 16px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.destination-img {
+    border-radius: 16px 16px 0 0;
+}
+
+.destination-descr {
+    padding: 16px;
+}

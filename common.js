@@ -22,7 +22,7 @@ class CommonNavigation extends HTMLElement {
                 <div class="nav-items">
                     <a href="./" class="nav-item">Home</a>
                     <a href="./about.html" class="nav-item">About Us</a>
-                    <a href="./contacts.html" class="nav-item">Contact Us</a>
+                    <a href="./contact.html" class="nav-item">Contact Us</a>
                 </div>
 
                 <div class="${searchClasses}">
