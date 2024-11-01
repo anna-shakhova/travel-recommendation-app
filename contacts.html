@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Travel Hack</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./common.css">
+        <link rel="stylesheet" href="./contacts.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="./common.js" defer></script>
+    </head>
+    <body>
+        <common-nav search="true"></common-nav>
+
+        <main>
+            <div class="main main-contacts">
+                <div class="title-contacts">
+                    <h1 class="page-title no-top-margin">Contact us</h1>
+                    <p class="page-text">Get in touch</p>
+                </div>
+
+                <form class="form-contacts">
+                    <label class="input-label" for="name">Name</label>
+                    <input class="transparent-input" type="text" name="name" id="name" required />
+                    
+                    <label class="input-label" for="email">Email</label>
+                    <input class="transparent-input" type="email" name="email" id="email" required />
+                    
+                    <label class="input-label" for="message">Message</label>
+                    <textarea class="transparent-input" name="message" id="message" rows="5" required></textarea>
+                    
+                    <button class="submit-button" type="submit">Submit</button>
+                  </form>
+            </div>
+
+            <media-links></media-links>             
+        </main>
+    </body>
+</html>
